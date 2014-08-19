@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Lazyboy : Command line laziness redefined!">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Lazyboy</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/arvindr21/lazyboy">View on GitHub</a>
+
+          <h1 id="project_title">Lazyboy</h1>
+          <h2 id="project_tagline">Command line laziness redefined!</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/arvindr21/lazyboy/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/arvindr21/lazyboy/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="lazyboy--" class="anchor" href="#lazyboy--"><span class="octicon octicon-link"></span></a>lazyboy <a href="http://badges.enytc.com/for/npm/lazyboy"><img src="https://badge-me.herokuapp.com/api/npm/lazyboy.png" alt="NPM version"></a> <a href="https://bitdeli.com/free" title="Bitdeli Badge"><img src="https://d2weczhvl823v0.cloudfront.net/arvindr21/lazyboy/trend.png" alt="Bitdeli Badge"></a>
+</h1>
+
+<p><a href="https://nodei.co/npm/lazyboy/"><img src="https://nodei.co/npm/lazyboy.png?downloads=true&amp;stars=true" alt="NPM"></a></p>
+
+<h4>
+<a name="-command-line-laziness-redefined" class="anchor" href="#-command-line-laziness-redefined"><span class="octicon octicon-link"></span></a>&gt; <em>Command line laziness redefined!</em>
+</h4>
+
+<p>The sole purpose of <code>lazyboy</code> (<em>a.k.a <code>lb</code></em>) is to make you more lazier when dealing with CLI. How many times did you type <code>got init</code> instead of <code>git init</code> and the "smart" CLI corrects you!</p>
+
+<p>But what if you had a shortcut say <code>i</code> to run <code>git init</code> everytime?? would'nt that be convinent? </p>
+
+<p>So, here is a CLI that does exatcly the same for you!! </p>
+
+<h2>
+<a name="contents" class="anchor" href="#contents"><span class="octicon octicon-link"></span></a>Contents</h2>
+
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#documentation">Documentation</a></li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Install the module globally :  </p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>npm install -g lazyboy
+</pre></div>
+
+<h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<div class="highlight highlight-bash"><pre>Usage: lb <span class="o">[</span>options<span class="o">]</span>
+
+Options:
+
+    -h, --help                       output usage information
+    -V, --version                    output the version number
+    -a, --add <span class="o">[</span><span class="nb">command</span> -&gt; shortcut<span class="o">]</span>  Enter a <span class="nb">command </span>that you would like to shortcut.
+    -r, --remove <span class="o">[</span>shortcut<span class="o">]</span>          Enter the shortcut to be removed from the saved commands.
+    -x, --execute <span class="o">[</span>shortcut<span class="o">]</span>         Enter the shortcut to run the saved command.
+    -p, --print                      Prints the list of saved shortcuts
+    -i, --import <span class="o">[</span>commands<span class="o">]</span>          Imports the commands that was exported from another Lazyboy collection
+    -e, --export                     Exports all the commands in your Lazyboy collection
+
+  Example Usage:
+
+  &gt; Add new <span class="nb">command </span>and its shortcut
+    <span class="nv">$ </span>lb -a <span class="s2">"git init -&gt; gi"</span>
+  &gt; Execute a shortcut
+    <span class="nv">$ </span>lb -x <span class="s2">"gi"</span>
+  &gt; Print saved shortcuts
+    <span class="nv">$ </span>lb -p
+  &gt; Remove a shortcut
+    <span class="nv">$ </span>lb -r <span class="s2">"gi"</span>
+  &gt; Export your Lazyboy shortcuts
+    <span class="nv">$ </span>lb -e
+  &gt; import Lazyboy shortcuts
+    <span class="nv">$ </span>lb -i <span class="s1">'[{"command":"git init","shortcut":"gi"},{"command":"ls -ltr","shortcut":"l"}]'</span>
+</pre></div>
+
+<h2>
+<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<h3>
+<a name="adding-and-executing-shortcuts" class="anchor" href="#adding-and-executing-shortcuts"><span class="octicon octicon-link"></span></a>Adding and Executing shortcuts</h3>
+
+<p>You can add a new shortcut by running </p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>lb -a <span class="s2">"git init -&gt; i"</span>
+</pre></div>
+
+<p>do notice the <code>-&gt;</code>. The left hand side of <code>-&gt;</code> is the command and the right hand side part is the shortcut.</p>
+
+<p><em>PS : You can name your shortcut charcters, numbers, etc..</em></p>
+
+<p>Now, you can execute the command by running</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>lb -x i
+</pre></div>
+
+<p>or </p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>lb i
+</pre></div>
+
+<p>Simple right??</p>
+
+<p>You can also add dynamic commands like </p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>lb -a <span class="s2">"git commit -m * -&gt; c"</span>
+</pre></div>
+
+<p>here <code>*</code> is the placeholder. And you can execute the command like </p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>lb -x c <span class="s2">"Initial Commit"</span>
+</pre></div>
+
+<p>or </p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>lb c <span class="s2">"Initial Commit"</span>
+</pre></div>
+
+<p>This will run  <code>git commit -m "Initial Commit"</code> for you.</p>
+
+<p>And if you are like me creating new repos and pushing them to Github, you must have this shortcut </p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>lb -a <span class="s2">"git init &amp;&amp; git add -A &amp;&amp; git commit -m * &amp;&amp; git remote add origin * &amp;&amp; git push origin master -&gt; r"</span>
+</pre></div>
+
+<p>And then the next time when you want to initialize and push the current folder to Github all you need to do is </p>
+
+<div class="highlight highlight-bash"><pre> <span class="nv">$ </span>lb r <span class="s2">"inital commit"</span> <span class="s2">"https://github.com/arvindr21/lb.git"</span>
+</pre></div>
+
+<p>And bam!!! You code will be initialized, staged, commited locally and pushed to Github! </p>
+
+<p><em>PS : The order of arguments in the actual command should match with the arguments while using <code>lazyboy</code></em> </p>
+
+<h3>
+<a name="prinitng-shortcuts" class="anchor" href="#prinitng-shortcuts"><span class="octicon octicon-link"></span></a>Prinitng shortcuts</h3>
+
+<p>Running </p>
+
+<div class="highlight highlight-bash"><pre> <span class="nv">$ </span>lb -p
+</pre></div>
+
+<p>will list all the shortcuts you have saved so far </p>
+
+<div class="highlight highlight-bash"><pre>List of saved commands :
+
+    Shortcut    Command
+    i    git init
+    r    git init <span class="o">&amp;&amp;</span> git add -A <span class="o">&amp;&amp;</span> git commit -m * <span class="o">&amp;&amp;</span> git remote add origin * <span class="o">&amp;&amp;</span> git push origin master
+</pre></div>
+
+<h3>
+<a name="removing-shortcuts" class="anchor" href="#removing-shortcuts"><span class="octicon octicon-link"></span></a>Removing shortcuts</h3>
+
+<p>If you want to remove any shortcuts, you can run</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>lb -r i
+</pre></div>
+
+<p>where <code>i</code> is the name of the shortcut. </p>
+
+<h3>
+<a name="importing--exporting-shortcuts" class="anchor" href="#importing--exporting-shortcuts"><span class="octicon octicon-link"></span></a>Importing &amp; Exporting shortcuts</h3>
+
+<p>You can export your saved shortcuts and then share them with your near and dear ones! All you need to do is run</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>lb -e
+</pre></div>
+
+<p>And you can share the output</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>lb -e
+<span class="o">[{</span><span class="s2">"command"</span>:<span class="s2">"git init"</span>,<span class="s2">"shortcut"</span>:<span class="s2">"i"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"command"</span>:<span class="s2">"git init &amp;&amp; git add -A &amp;&amp; git commit -m * &amp;&amp; git remote add origin * &amp;&amp; git push origin master"</span>,<span class="s2">"shortcut"</span>:<span class="s2">"r"</span><span class="o">}]</span>
+</pre></div>
+
+<p>And you can import the same using</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>lb -i <span class="s1">'[{"command":"git init","shortcut":"i"},{"command":"git init &amp;&amp; git add -A &amp;&amp; git commit -m * &amp;&amp; git remote add origin * &amp;&amp; git push origin master","shortcut":"r"}]'</span>
+</pre></div>
+
+<p>Do notice the single quotes before and after the JSON.</p>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>See the <a href="https://github.com/arvindr21/lazyboy/blob/master/CONTRIBUTING.md">CONTRIBUTING Guidelines</a></p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright (c) 2014 Arvind Ravulavaru. Licensed under the MIT license.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Lazyboy maintained by <a href="https://github.com/arvindr21">arvindr21</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-47722912-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
