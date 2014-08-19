@@ -1,0 +1,34 @@
+{
+  "name": "lazyboy",
+  "version": "0.1.0",
+  "preferGlobal": "true",
+  "bin": {
+    "lb": "lazyboy.js"
+  },
+  "main": "lazyboy.js",
+  "description": "Command line laziness redefined!",
+  "homepage": "http://arvindr21.github.io/lazyboy",
+  "bugs": "https://github.com/arvindr21/lazyboy/issues",
+  "author": {
+    "name": "Arvind Ravulavaru",
+    "email": "arvind.ravulavaru@gmail.com",
+    "url": "http://thejackalofjavascript.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arvindr21/lazyboy"
+  },
+  "license": "MIT",
+  "keywords": [
+    "lazyboy",
+    "light weight",
+    "command line",
+    "utility",
+    "alias"
+  ],
+  "dependencies": {
+    "colors": "^0.6.2",
+    "commander": "^2.3.0",
+    "shelljs": "^0.3.0"
+  }
+}

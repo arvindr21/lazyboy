@@ -1,0 +1,1 @@
+[{"command":"git init","shortcut":"i"},{"command":"git init && git add -A && git commit -m * && git remote add origin * && git push origin master","shortcut":"r"}]
