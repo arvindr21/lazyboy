@@ -14,8 +14,7 @@ var program = require('commander');
 var shell = require('shelljs');
 var fs = require('fs');
 var colors = require('colors');
-var file = '.cdb';
-
+var file = __filename.replace('/lazyboy.js','')+'/.cdb';
 
 program
   .version('lazyBoy v0.0.1'.green)
