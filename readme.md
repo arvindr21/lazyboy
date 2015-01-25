@@ -95,7 +95,7 @@ or
 ```bash
 $ lb ps
 ```
-Sweet right? And the best thing is, this module is language agnositic. It can store any command line statements as shortcuts!
+Sweet right? And the best thing is, this module is language agonistic. It can store any command line statement as shortcuts!
 
 You can also add dynamic commands like 
 ```bash
