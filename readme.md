@@ -73,6 +73,30 @@ $ lb i
 
 Simple right??
 
+Another example. Do you use the Python's `SimpleHTTPServer` module to launch a new static server? And you have to type 
+```bash
+$ python -m SimpleHTTPServer
+
+```
+or
+```bash
+$ python -m http.server
+```
+
+You can create an alias like 
+```bash
+$ lb -a "python -m SimpleHTTPServer -> ps"
+```
+and you can run the below command in the folder where you want to spwan the HTTP server
+```bash
+$ lb -x ps
+```
+or 
+```bash
+$ lb ps
+```
+Sweet right? And the best thing is, this module is language agnositic. It can store any command line statements as shortcuts!
+
 You can also add dynamic commands like 
 ```bash
 $ lb -a "git commit -m * -> c"
