@@ -241,8 +241,8 @@ function execCommand(command) {
   });
 
   cmd.stderr.on('data', function(err) {
-    //var msg = 'Something Went wrong while executing "' + command + '"';
-    //shell.echo(msg.red);
+    var msg = 'Something Went wrong while executing "' + command + '"';
+    shell.echo(msg.red);
     shell.echo('' + err);
   });
 
