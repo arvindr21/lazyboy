@@ -14,7 +14,8 @@ var program = require('commander');
 var shell = require('shelljs');
 var fs = require('fs');
 var colors = require('colors');
-var file = __dirname+'/.cdb';
+var file = __dirname + '/.cdb';
+var spawn = require('child_process').spawn;
 
 program
   .version('lazyBoy v0.0.1'.green)
@@ -216,15 +217,40 @@ function executeCommand(_x, _m) {
         } else {
           command = processCommand(command, 3);
         }
-        shell.exec(command);
+        execCommand(command);
       } else {
-        shell.exec(command);
+        execCommand(command);
       }
     } else {
       shell.echo('The entered shortcut is not saved yet!'.red);
       helpAdd();
     }
   }
+}
+
+function execCommand(command) {
+  var __command = command;
+  command = command.split(' ');
+  var _c = command[0];
+  command.shift();
+  var cmd = spawn(_c, command);
+
+  cmd.stdout.on('data', function(data) {
+    shell.echo('');
+    shell.echo('' + data);
+  });
+
+  cmd.stderr.on('data', function(err) {
+    //var msg = 'Something Went wrong while executing "' + command + '"';
+    //shell.echo(msg.red);
+    shell.echo('' + err);
+  });
+
+  cmd.on('exit', function(code) {
+    var msg = 'Successfully executed "' + command + '"';
+    shell.echo(msg.green);
+  });
+
 }
 
 function checkDuplicate(_c, _o) {
